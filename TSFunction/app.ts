@@ -54,17 +54,32 @@
 // var pn = peopleName("abel","fat","if","else","?");
 // document.getElementById("app").innerHTML = pn;
 
-var people = {
-    name: ["A","B","C","D","E"],
-    getName: function(){
-        return ()=>{
-            var i = Math.floor(Math.random()*4);
-            return {
-                n: this.name[i]
-            }
-        }
+//Lambads和this關鍵字
+// var people = {
+//     name: ["A","B","C","D","E"],
+//     getName: function(){
+//         return ()=>{
+//             var i = Math.floor(Math.random()*4);
+//             return {
+//                 n: this.name[i]
+//             }
+//         }
+//     }
+// }
+// var MyName = people.getName();
+// // alert('name:' + MyName().n);
+// document.write(MyName().n);
+
+//函數的重載
+// function attr(name:string):string;
+// function attr(age:number):number;
+
+function attr(nameorage:any):any{
+    if(nameorage && typeof nameorage === "string"){
+        alert("姓名");
+    }else{
+        alert("年齡")
     }
 }
-var MyName = people.getName();
-// alert('name:' + MyName().n);
-document.write(MyName().n);
+attr("hello");
+attr(10);
